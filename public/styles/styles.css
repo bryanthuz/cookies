@@ -1,3 +1,15 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+header {
+  background-color: pink;
+  text-align: center;
+}
+
+#header-logo {
+  max-height: 150px;
+  width: auto;
+  margin: 20px auto;
+}
+
