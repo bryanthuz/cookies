@@ -19,6 +19,10 @@ module.exports = function(app) {
       });
     });
   });
+  
+  app.get("/contact", function(req, res) {
+    res.render("contact");
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
