@@ -35,7 +35,7 @@
           <li><a href="#" class="nav-link nav-link-mid">Gallery</a></li>
           <li><a href="#" class="nav-link nav-link-mid">About</a></li>
           <li><a href="#" class="nav-link nav-link-mid">Link 4</a></li>
-          <li><a href="#" class="nav-link" id="nav-link-5">Contact</a></li>
+          <li><a href="/contact" class="nav-link" id="nav-link-5">Contact</a></li>
         </ul>
       </div>
       <div class="menu-btn">
@@ -95,6 +95,9 @@
           var mq = window.matchMedia("(max-width: 767px)")
           fixMenu(mq) // Call listener function at run time
           mq.addListener(fixMenu) // Attach listener function on state changes 
+
+          $('#textarea1').val('New Text');
+          M.textareaAutoResize($('#textarea1'));
         })
       </script>
 </body>
