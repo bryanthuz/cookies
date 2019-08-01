@@ -9,21 +9,16 @@ body {
 header {  
   text-align: center;
   font-size: 16px;
-<<<<<<< HEAD
-=======
   margin-bottom: 100px;
 }
 
 footer {
   margin-top: 100px;
->>>>>>> 820c35d10b079e2a7209623fa514f0611444eca1
 }
 
 .container {
   width: 100%;
 }
-<<<<<<< HEAD
-=======
 #contact-sect,
 .page-footer .container {
   max-width: 80%;
@@ -38,7 +33,6 @@ footer {
 .section-heading {
   color: #37a480;
 }
->>>>>>> 820c35d10b079e2a7209623fa514f0611444eca1
 
 header,
 .nav-link {
@@ -75,22 +69,15 @@ header {
   background: #57bd9c;
 }
 
-<<<<<<< HEAD
 .admin {
   width: 90%;
   background-color: rebeccapurple;
 }
-=======
->>>>>>> 820c35d10b079e2a7209623fa514f0611444eca1
 
 /*********** Styles for screen for 767px and smaller only ***********/
 @media only screen and (max-width: 767px) {
   body {
-<<<<<<< HEAD
-    background: yellow;
-=======
     /* background: yellow; */
->>>>>>> 820c35d10b079e2a7209623fa514f0611444eca1
   }
 
   .flex-nav {
@@ -133,11 +120,7 @@ header {
 /*********** Medium devices (landscape tablets, 768px and up) *************/
 @media only screen and (min-width: 768px) {
   body {
-<<<<<<< HEAD
-    background: tan;
-=======
     /* background: tan; */
->>>>>>> 820c35d10b079e2a7209623fa514f0611444eca1
   }
 
   .menu-btn {
@@ -187,11 +170,7 @@ header {
 /*********** Large devices (laptops/desktops, 992px and up) ************/
 @media only screen and (min-width: 992px) {
   body {
-<<<<<<< HEAD
-    background: pink;
-=======
     /* background: pink; */
->>>>>>> 820c35d10b079e2a7209623fa514f0611444eca1
   }
   /* #header-cont {
     width: 80%;
@@ -204,10 +183,6 @@ header {
 @media only screen and (min-width: 1200px) {
   body {
     display: ;
-<<<<<<< HEAD
-    background: lightblue;
-=======
     /* background: lightblue; */
->>>>>>> 820c35d10b079e2a7209623fa514f0611444eca1
   }
 }

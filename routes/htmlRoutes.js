@@ -17,13 +17,8 @@ module.exports = function(app) {
     res.render("index");
   });
 
-<<<<<<< HEAD
   app.get("/admin", function(req, res) {
     res.render("admin");
-=======
-  app.get("/example", function(req, res) {
-    res.render("example");
->>>>>>> 820c35d10b079e2a7209623fa514f0611444eca1
   });
 
   app.get("/gallery", function(req, res) {
@@ -33,10 +28,6 @@ module.exports = function(app) {
       });
     });
   });
-  
-  app.get("/contact", function(req, res) {
-    res.render("contact");
-  });
 
   app.get("/contact", function(req, res) {
     res.render("contact");
@@ -45,22 +36,6 @@ module.exports = function(app) {
   app.get("/about", function(req, res) {
     res.render("public");
   });
-
-  // app.get("/cms", function(req,res) {
-  //   //put code here
-  // });
-
-  app.get("/contact", function(req, res) {
-    res.render("contact");
-  });
-
-  app.get("/about", function(req, res) {
-    res.render("public");
-  });
-
-  // app.get("/cms", function(req,res) {
-  //   //put code here
-  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
