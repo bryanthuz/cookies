@@ -1,27 +1,44 @@
+var path = require("path");
+
 var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
+  // app.get("/", function(req, res) {
+  //   db.Example.findAll({}).then(function(dbExamples) {
+  //     res.render("index", {
+  //       msg: "Welcome!",
+  //       examples: dbExamples
+  //     });
+  //   });
+  // });
+
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+    res.render("index");
+  });
+
+  app.get("/admin", function(req, res) {
+    res.render("admin");
+  });
+
+  app.get("/gallery", function(req, res) {
+    db.Cookie.findAll({}).then(function(dbCookies) {
+      res.render("gallery", {
+        cookies: dbCookies
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
-  
   app.get("/contact", function(req, res) {
     res.render("contact");
+  });
+
+  app.get("/about", function(req, res) {
+    res.render("public");
+  });
+
+  app.get("/order", function(req, res) {
+    res.render("order");
   });
 
   // Render 404 page for any unmatched routes

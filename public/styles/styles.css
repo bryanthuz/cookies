@@ -81,6 +81,10 @@ header {
   height: 600px;
 }
 
+.admin {
+  width: 90%;
+  background-color: rebeccapurple;
+}
 
 /*********** Styles for screen for 767px and smaller only ***********/
 @media only screen and (max-width: 767px) {
