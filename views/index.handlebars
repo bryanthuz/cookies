@@ -1,11 +1,22 @@
 {{!-- CHECK BOOTSTRAP TAGS IN MATERIALIZE --}}
 
+
+
 <div id="home">
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
+
+       
+         <p class="center-align">
+         <img src="../img/baby_shower.jpg" alt="Baby Shower Cookie" id="shower" width="100%"></img>
+         </p>
+
+         <h2>Welcome!</h2> 
+
+        <p>About Me: Hi, I’m Audria. Owner and self taught baker of The Sweet Bean. I started making custom sugar cookies two years ago and my love for baking and making speciality treats for my friends and family has quickly grown into this amazing business. I am so excited to be serving Pekin and the surrounding areas and I look forward to seeing many of you at my storefront! Thank you for stopping by my website and for shopping small and local. Your support means the world to me.</p>
+
         {{!-- <form class="clearfix mb-4" action="POST"> --}}
           {{!-- <div class="form-group">
             <label for="example-text">Example Text</label>
@@ -33,3 +44,112 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+
+           </p>
+
+        <br>
+      
+        <hr>
+
+        <br>
+       
+        <div class="container">
+        <div class="row">
+          <div class="col s12" id="profile" > </div>
+          <div class="col s4 m3 l2 modal-trigger" id="instagram-0"> </div>
+          <div class="col s4 m3 l2 modal-trigger" id="instagram-1"> </div>
+          <div class="col s4 m3 l2 modal-trigger" id="instagram-2"> </div>
+          <div class="col s4 m3 l2 modal-trigger" id="instagram-3"> </div>
+          <div class="col s4 m3 l2 modal-trigger" id="instagram-4"> </div>
+          <div class="col s4 m3 l2 modal-trigger" id="instagram-5"> </div>
+        </div>
+
+        <p class="center-align">
+         <a class="waves-effect waves-light btn-large" id="button" href="https://www.instagram.com/ashlund4/"> <i class="fab fa-instagram"></i>  Follow us on Instagram </a>
+         </p>
+        </div>
+      
+      <br>
+      <br>
+
+
+          
+      
+
+        {{!-- <form class="clearfix mb-4" action="POST"> --}}
+          {{!-- <div class="form-group">
+            <label for="example-text">Example Text</label>
+            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+          </div> --}}
+          {{!-- <div class="form-group">
+            <label for="example-description">Example Description</label>
+            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+          </div> --}}
+          {{!-- <button id="submit" class="btn btn-primary float-right">Submit</button> --}}
+        {{!-- </form> --}}
+        {{!-- <h3>Examples:</h3> --}}
+        <ul id="example-list" class="list-group">
+          {{#each examples}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.text}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+
+
+
+<script>
+$(document).ready(function(){
+$.ajax({
+    url: "/api/instagram",
+    method: "GET",
+  })
+    
+.then(function(response) {
+    var results=response.data
+    var profile=results[0].user.profile_picture
+            $("#profile").append($("<img/>").attr("src", profile).width(35));
+       
+
+   
+
+for (var i=0; i<6; i++) {
+    var insta=results[i].images.thumbnail.url
+    var test=results[10].id
+    var link=results[i].link
+    console.log(test)
+    console.log(insta)
+   
+
+         
+           
+          $("#instagram-" + i).append($("<img/>").attr("src", insta));
+         
+
+
+        }
+
+      
+});
+})
+
+
+
+
+
+       
+  
+
+
+
+
+</script>
+
