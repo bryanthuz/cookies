@@ -1,30 +1,33 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $cookieText = $("#cookie-text");
+var $cookieKeywords = $("#cookie-keywords");
+var $cookieDescription = $("#cookie-description");
+var $cookieImg = $("#cookie-img");
+var $cookieCat = $("#cookie-category");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $cookieList = $("#cookie-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveCookie: function(cookie) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/cookies",
+      data: JSON.stringify(cookie)
     });
   },
-  getExamples: function() {
+  getCookies: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/cookies",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteCookies: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/cookies/" + id,
       type: "DELETE"
     });
   }
