@@ -11,12 +11,11 @@ header {
   text-align: center;
 }
 
-footer {
-  margin-top: 100px;
-}
-
-#contact-sect {
-  margin-top: 100px;
+footer,
+#contact-sect,
+#about,
+.admin {
+  margin-top: 80px;
 }
 
 header .container {
@@ -44,7 +43,8 @@ header,
 }
 
 .page-footer,
-header {
+header,
+#button {
   background: #57bd9c;
 }
 
@@ -79,6 +79,15 @@ header {
 
 .parallax-container {
   height: 600px;
+}
+
+.para {
+  margin-bottom: 40px;
+}
+
+#about-pic {
+  height: 400px;
+  width: auto;
 }
 
 
@@ -190,7 +199,7 @@ header {
 /********* Extra large devices (large laptops and desktops, 1200px and up) ************/
 @media only screen and (min-width: 1200px) {
   body {
-    display: ;
+    /* display: ; */
     /* background: lightblue; */
   }
 }
