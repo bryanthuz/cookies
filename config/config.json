@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "user123",
     "database": "cookies_db",
     "host": "localhost",
     "dialect": "mysql"
