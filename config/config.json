@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "wisconsin",
-=======
     "password": "password",
->>>>>>> fd7e4c1120b7306436043a16f0fd38c69d25539b
     "database": "cookies_db",
     "host": "localhost",
     "dialect": "mysql"

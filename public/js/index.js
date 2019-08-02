@@ -33,18 +33,18 @@ var API = {
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+// refreshcookies gets new cookies from the db and repopulates the list
+var refreshcookies = function() {
+  API.getCookies().then(function(data) {
+    var $cookies = data.map(function(cookie) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(cookie.text)
+        .attr("href", "/cookie/" + cookie.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": cookie.id
         })
         .append($a);
 
@@ -57,46 +57,46 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $cookieList.empty();
+    $cookieList.append($cookies);
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+// handleFormSubmit is called whenever we submit a new cookie
+// Save the new cookie to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  console.log("Submit Clicked!")
+  var cookie = {
+    text: $cookieText.val().trim(),
+    description: $cookieDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(cookie.text && cookie.description)) {
+    alert("You must enter an cookie text and description!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.savecookie(cookie).then(function() {
+    refreshcookies();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $cookieText.val("");
+  $cookieDescription.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
+// handleDeleteBtnClick is called when an cookie's delete button is clicked
+// Remove the cookie from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deletecookie(idToDelete).then(function() {
+    refreshcookies();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$cookieList.on("click", ".delete", handleDeleteBtnClick);
