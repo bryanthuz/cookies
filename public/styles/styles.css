@@ -50,6 +50,32 @@ header {
   background: #57bd9c;
 }
 
+hr {
+  border-top: 1px lightgrey;
+
+}
+
+h2 {
+  color: white;
+}
+
+#galleryText {
+  text-align: center;
+  font-size: 22px;
+}
+
+p {
+  color:white;
+  font-family: sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+#button {
+  background-color: #57bd9c;
+}
+
+
 
 /*********** Styles for screen for 767px and smaller only ***********/
 @media only screen and (max-width: 767px) {
