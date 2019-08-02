@@ -9,10 +9,29 @@ body {
 header {  
   text-align: center;
   font-size: 16px;
+  margin-bottom: 100px;
+}
+
+footer {
+  margin-top: 100px;
 }
 
 .container {
   width: 100%;
+}
+#contact-sect,
+.page-footer .container {
+  max-width: 80%;
+}
+
+#contact-form {
+  border: #57bd9c 2px solid;
+  padding: 30px;
+  /* margin: 50px auto; */
+}
+
+.section-heading {
+  color: #37a480;
 }
 
 header,
@@ -50,11 +69,15 @@ header {
   background: #57bd9c;
 }
 
+.admin {
+  width: 90%;
+  background-color: rebeccapurple;
+}
 
 /*********** Styles for screen for 767px and smaller only ***********/
 @media only screen and (max-width: 767px) {
   body {
-    background: yellow;
+    /* background: yellow; */
   }
 
   .flex-nav {
@@ -97,7 +120,7 @@ header {
 /*********** Medium devices (landscape tablets, 768px and up) *************/
 @media only screen and (min-width: 768px) {
   body {
-    background: tan;
+    /* background: tan; */
   }
 
   .menu-btn {
@@ -147,7 +170,7 @@ header {
 /*********** Large devices (laptops/desktops, 992px and up) ************/
 @media only screen and (min-width: 992px) {
   body {
-    background: pink;
+    /* background: pink; */
   }
   /* #header-cont {
     width: 80%;
@@ -160,6 +183,6 @@ header {
 @media only screen and (min-width: 1200px) {
   body {
     display: ;
-    background: lightblue;
+    /* background: lightblue; */
   }
 }
