@@ -17,6 +17,7 @@ describe("GET /api/cookies", function() {
     return db.sequelize.sync({ force: true });
   });
 
+
   it("should find all cookies", function(done) {
     // Add some examples to the db to test with
     db.Cookie.bulkCreate([
