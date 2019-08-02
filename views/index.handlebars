@@ -1,5 +1,3 @@
-{{!-- CHECK BOOTSTRAP TAGS IN MATERIALIZE --}}
-
 <div class="parallax-container">
   <div class="parallax"><img src="../img/cookies/custom_baby_shower_bottle_bib_onesie_hearts_flowers_cookies.jpg" alt="image text"></div>
 </div>
@@ -36,31 +34,28 @@
 <script>
   $(document).ready(function(){
     $('.parallax').parallax();
-  });
-  $(document).ready(function(){
-    $('.slider').slider();
-  });
 
-$(document).ready(function(){
-$.ajax({
+    $.ajax({
     url: "/api/instagram",
     method: "GET",
-  }).then(function(response) {
-    var results=response.data
-    var profile=results[0].user.profile_picture
-    $("#profile").append($("<img/>").attr("src", profile).width(35));
-    
-    for (var i=0; i<6; i++) {
-        var insta=results[i].images.thumbnail.url
-        var test=results[10].id
-        var link=results[i].link
-        console.log(test)
-        console.log(insta)
-        
-        $("#instagram-" + i).append($("<img/>").attr("src", insta));
-         
-    }
+    }).then(function(response) {
+      var results=response.data
+      var profile=results[0].user.profile_picture
+      $("#profile").append($("<img/>").attr("src", profile).width(35));
       
-});
-})
+      for (var i=0; i<6; i++) {
+          var insta=results[i].images.thumbnail.url
+          var test=results[10].id
+          var link=results[i].link
+          console.log(test)
+          console.log(insta)
+          
+          $("#instagram-" + i).append($("<img/>").attr("src", insta));
+          
+      }
+        
+    });
+
+  });
+
 </script>

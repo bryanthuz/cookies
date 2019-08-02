@@ -11,11 +11,14 @@ header {
   text-align: center;
 }
 
-footer,
 #contact-sect,
 #about,
 .admin {
-  margin-top: 80px;
+  margin-top: 50px;
+}
+
+footer {
+  margin-top: 100px;
 }
 
 header .container {
@@ -27,10 +30,10 @@ header .container {
   max-width: 80%;
 }
 
-#contact-form {
+.sections {
   border: #57bd9c 2px solid;
   padding: 30px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .section-heading {
@@ -90,6 +93,21 @@ header,
   width: auto;
 }
 
+.footer-link {
+  padding-bottom: 6px;
+}
+
+.product-carousel {
+  height: 600px;
+}
+.product-carousel .thumbnails {
+  top: -90px;
+}
+
+.card-image {
+  height: 235px;
+  overflow: hidden;
+}
 
 /*********** Styles for screen for 767px and smaller only ***********/
 @media only screen and (max-width: 767px) {
