@@ -5,25 +5,28 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         len: [1]
-      }
+      },
+      defaultValue: "Example Cookie Name"
     },
-    keywords: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
+    // keywords: {
+    //   type: DataTypes.TEXT,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [1]
+    //   }
+    // },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      defaultValue: "Default description"
     },
     image: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         len: [1]
-      }
+      },
+      defaultValue: "example_cookies_image.jpg"
     },
     category: {
       type: DataTypes.STRING,

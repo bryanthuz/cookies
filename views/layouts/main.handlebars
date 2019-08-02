@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -57,9 +57,10 @@
             <h5 class="white-text">Links</h5>
             <ul>
               <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Gallery</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+              <li><a class="grey-text text-lighten-3" href="/gallery">Gallery</a></li>
+              <li><a class="grey-text text-lighten-3" href="/about">About</a></li>
               <li><a class="grey-text text-lighten-3" href="/contact">Contact</a></li>
+              <li><a class="grey-text text-lighten-3" href="/admin">Admin</a></li>
             </ul>
           </div>
       </div>
@@ -77,32 +78,10 @@
 
   
   <!--JavaScript at end of body for optimized loading-->
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-        {{!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
-  <script type="text/javascript"> 
-        $(document).ready(function(){
-          $(".menu-btn").click(function(){
-            $(".flex-nav").slideToggle(1000);
-          })
-
-          function fixMenu(mq) {
-            if (mq.matches) {
-              // 767px or smaller
-              // document.body.style.backgroundColor = "yellow";
-            } else {
-              // 768px or greater
-              $(".flex-nav").css('display', '')
-            }
-          }
-
-          var mq = window.matchMedia("(max-width: 767px)")
-          fixMenu(mq) // Call listener function at run time
-          mq.addListener(fixMenu) // Attach listener function on state changes 
-
-          $('#textarea1').val('New Text');
-          M.textareaAutoResize($('#textarea1'));
-        })
-      </script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/admin.js"></script>
 </body>
 
 </html>

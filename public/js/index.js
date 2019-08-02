@@ -1,31 +1,33 @@
+console.log("hello world! Index");
+
 // Get references to page elements
-var $cookieText = $("#cookie-text");
-var $cookieKeywords = $("#cookie-keywords");
-var $cookieDescription = $("#cookie-description");
-var $cookieImg = $("#cookie-img");
-var $cookieCat = $("#cookie-category");
+var $ckeText = $("#cookie-text");
+// var $ckeKeywords = $("#cookie-keywords");
+var $ckeDescription = $("#cookie-description");
+// var $ckeImg = $("#cookie-img");
+// var $ckeCat = $("#cookie-category");
 var $submitBtn = $("#submit");
-var $cookieList = $("#cookie-list");
+var $ckeList = $("#cookie-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveCookie: function(cookie) {
+  savecookie: function(cke) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
       url: "api/cookies",
-      data: JSON.stringify(cookie)
+      data: JSON.stringify(cke)
     });
   },
-  getCookies: function() {
+  getcookies: function() {
     return $.ajax({
       url: "api/cookies",
       type: "GET"
     });
   },
-  deleteCookies: function(id) {
+  deletecookies: function(id) {
     return $.ajax({
       url: "api/cookies/" + id,
       type: "DELETE"
@@ -33,18 +35,18 @@ var API = {
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+// refreshckes gets new ckes from the db and repopulates the list
+var refreshcookies = function() {
+  API.getcookies().then(function(data) {
+    var $ckes = data.map(function(cke) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(cke.text)
+        .attr("href", "/gallery/" + cke.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": cke.id
         })
         .append($a);
 
@@ -57,46 +59,69 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $ckeList.empty();
+    $ckeList.append($ckes);
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+// handleFormSubmit is called whenever we submit a new cke
+// Save the new cke to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  console.log("Submit Clicked!")
+  var cke = {
+    text: $ckeText.val().trim(),
+    description: $ckeDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(cke.text && cke.description)) {
+    alert("You must enter an cke text and description!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.savecke(cke).then(function() {
+    refreshcookies();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $ckeText.val("");
+  $ckeDescription.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
+// handleDeleteBtnClick is called when an cke's delete button is clicked
+// Remove the cke from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deletecke(idToDelete).then(function() {
+    refreshcookies();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$ckeList.on("click", ".delete", handleDeleteBtnClick);
+
+$(document).ready(function(){
+  $(".menu-btn").click(function() {
+    $(".flex-nav").slideToggle(1000);
+  })
+
+  function fixMenu(mq) {
+    if (mq.matches) {
+      // 767px or smaller
+      // document.body.style.backgroundColor = "yellow";
+    } else {
+      // 768px or greater
+      $(".flex-nav").css("display", "");
+    }
+  }
+
+  var mq = window.matchMedia("(max-width: 767px)");
+  fixMenu(mq); // Call listener function at run time
+  mq.addListener(fixMenu); // Attach listener function on state changes
+
+  $("#textarea1").val("New Text");
+  M.textareaAutoResize($("#textarea1"));
+});
