@@ -1,48 +1,68 @@
 {{!-- CHECK BOOTSTRAP TAGS IN MATERIALIZE --}}
 
-
-
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-    
-         <p class="center-align">
-         <img src="../img/baby_shower.jpg" alt="Baby Shower Cookie" id="shower" width="100%"></img>
-         </p>
-
-         <h2>Welcome!</h2> 
-
-        <p>About Me: Hi, I’m Audria. Owner and self taught baker of The Sweet Bean. I started making custom sugar cookies two years ago and my love for baking and making speciality treats for my friends and family has quickly grown into this amazing business. I am so excited to be serving Pekin and the surrounding areas and I look forward to seeing many of you at my storefront! Thank you for stopping by my website and for shopping small and local. Your support means the world to me.</p>
-        {{!-- <form class="clearfix mb-4" action="POST"> --}}
-          {{!-- <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div> --}}
-          {{!-- <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div> --}}
-          {{!-- <button id="submit" class="btn btn-primary float-right">Submit</button> --}}
-        {{!-- </form> --}}
-        {{!-- <h3>Examples:</h3> --}}
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
+<div class="parallax-container">
+  <div class="parallax"><img src="../img/parallax.jpg" alt="image text"></div>
+</div>
+<div class="section white center-align">
+  <div class="row container">
+    <h2 class="header">Welcome</h2>
+    <p class="grey-text text-darken-3 lighten-3 welcome">Special cloth alert. You see the hedges, how I got it shaped up? It’s important to shape up your hedges, it’s like getting a haircut, stay fresh. Don’t ever play yourself. They will try to close the door on you, just open it. How’s business? Boomin. You do know, you do know that they don’t want you to have lunch. I’m keeping it real with you, so what you going do is have lunch. They never said winning was easy. Some people can’t handle success, I can.</p>
+    <br>
+    <p class="grey-text text-darken-3 lighten-3">The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. The ladies always say Khaled you smell good, I use no cologne. Cocoa butter is the key. The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth. You should never complain, complaining is a weak emotion, you got life, we breathing, we blessed.</p>
+    <br>
+    <p class="grey-text text-darken-3 lighten-3">Give thanks to the most high. Don’t ever play yourself. Life is what you make it, so let’s make it. You smart, you loyal, you a genius. Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast. Find peace, life is like a water fall, you’ve gotta flow. Every chance I get, I water the plants, Lion! Lion! Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast.</p>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+        <div class="slider">
+            <ul class="slides">
+                <li>
+                  <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+                  <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                  </div>
+                </li>
+                <li>
+                  <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+                  <div class="caption left-align">
+                    <h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                  </div>
+                </li>
+                <li>
+                  <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+                  <div class="caption right-align">
+                    <h3>Right Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                  </div>
+                </li>
+                <li>
+                  <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+                  <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                  </div>
+                </li>
+            </ul>
+        </div>
+    </div>                  
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 
+
+<script>
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+
+  $(document).ready(function(){
+    $('.slider').slider();
+  });
+</script>
            </p>
 
         <br>
@@ -150,4 +170,3 @@ for (var i=0; i<6; i++) {
 
 
 </script>
-

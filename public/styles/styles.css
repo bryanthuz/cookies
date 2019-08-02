@@ -4,21 +4,25 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-size: 16px;
 }
 
 header {  
   text-align: center;
-  font-size: 16px;
-  margin-bottom: 100px;
 }
 
 footer {
   margin-top: 100px;
 }
 
-.container {
+#contact-sect {
+  margin-top: 100px;
+}
+
+header .container {
   width: 100%;
 }
+
 #contact-sect,
 .page-footer .container {
   max-width: 80%;
@@ -27,7 +31,7 @@ footer {
 #contact-form {
   border: #57bd9c 2px solid;
   padding: 30px;
-  /* margin: 50px auto; */
+  margin-top: 40px;
 }
 
 .section-heading {
@@ -68,6 +72,13 @@ header {
 .nav-link:hover {
   background: #57bd9c;
 }
+
+.footer-copyright i {
+  margin-left: 10px;
+}
+
+.parallax-container {
+  height: 600px;
 
 hr {
   border-top: 1px lightgrey;
