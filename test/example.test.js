@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 var request;
 
-describe("GET /api/examples", function() {
+describe("GET /api/cookies", function() {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function() {
@@ -17,14 +17,21 @@ describe("GET /api/examples", function() {
     return db.sequelize.sync({ force: true });
   });
 
-  it("should find all examples", function(done) {
+
+  it("should find all cookies", function(done) {
     // Add some examples to the db to test with
-    db.Example.bulkCreate([
-      { text: "First Example", description: "First Description" },
-      { text: "Second Example", description: "Second Description" }
+    db.Cookie.bulkCreate([
+      {
+        name: "Sawyer's Baby Shower - It's a Girl Hawaiian Cookies",
+        keywords: "hawaiian, palm frawns, onesie, hibiscus",
+        description: "default description",
+        image: "baby_shower_girl_hawaiian_onsie_cookies.jpg",
+        category: "Birthday"
+      }
     ]).then(function() {
       // Request the route that returns all examples
-      request.get("/api/examples").end(function(err, res) {
+
+      request.get("/api/cookies").end(function(err, res) {
         var responseStatus = res.status;
         var responseBody = res.body;
 
@@ -36,15 +43,17 @@ describe("GET /api/examples", function() {
 
         expect(responseBody)
           .to.be.an("array")
-          .that.has.lengthOf(2);
+          .that.has.lengthOf(1);
 
         expect(responseBody[0])
           .to.be.an("object")
-          .that.includes({ text: "First Example", description: "First Description" });
-
-        expect(responseBody[1])
-          .to.be.an("object")
-          .that.includes({ text: "Second Example", description: "Second Description" });
+          .that.includes({
+            name: "Sawyer's Baby Shower - It's a Girl Hawaiian Cookies",
+            keywords: "hawaiian, palm frawns, onesie, hibiscus",
+            description: "default description",
+            image: "baby_shower_girl_hawaiian_onsie_cookies.jpg",
+            category: "Birthday"
+          });
 
         // The `done` function is used to end any asynchronous tests
         done();
