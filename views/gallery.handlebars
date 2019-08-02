@@ -1,22 +1,335 @@
+<div class="container" id="gallery-sect"> {{!-- MAIN CONTENT CONTAINER --}}
 
-    <div class="container">
-    <h2 class="center-align"> Cookie Gallery </h2>
-
-    <hr>
-    <br>
-    <p class="center-align"> Take a peak at some of the beautiful cookies we have created!</p>
+    <div class="row">
+        <div class="col s12">
+            <h2 class="section-heading">Gallery</h2>
+        </div>
     </div>
-    
-    <br>
 
-    <div class="container">
-          {{#each cookies}}
-        <div class="row"> 
-             <div class="col s3 m3 l3" id="gallery"> 
-             <img src="../img/{{this.image}}"  alt="{{this.name}}" class="circle responsive-img">
-              <p id="galleryText"> {{this.name}}</p>
-       
-            </div>
-  {{/each}}
-</div>
-</div>
+    <div class="row sections" id="gallery"> {{!-- MAIN GALLERY ROW --}}
+        <div class="col s12"> {{!-- GALLERY COL --}}
+
+            <div class="row"> {{!-- DROPDOWN SELECTOR --}}
+                 <div class="input-field col s12">
+                    <select multiple>
+                        <option value="" disabled selected>Choose your cookies!</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label>Multiple Select</label>
+                </div>
+            </div> {{!-- END DROPDOWN SELECTOR --}}
+
+            <div class="row"> {{!-- IMG ROW 1 --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/baby_shower_girl_hawaiian_onsie_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Baby Shower Girl Hawaiian Onsie Cookies</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_airplane_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Airplane Cookies</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_baby_shower_bib_onsie_otter_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Baby Shower Bib Onsie Otter Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+                
+            </div> {{!-- END IMG ROW 1 --}}
+
+            <div class="row"> {{!-- IMG ROW 2 --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_baby_shower_bottle_bib_onesie_hearts_flowers_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Baby Shower Bottle Bib Onesie Hearts Flowers Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_baby_shower_dreamweaver_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Baby Shower Dreamweaver Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+                
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_birthday_boy_moon_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Birthday Boy Moon Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+            </div> {{!-- END IMG ROW 2 --}}
+
+            <div class="row"> {{!-- IMG ROW 3 --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_bridal_shower_sunflower_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Bridal Shower Sunflower Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_cactus_onesie_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Cactus Onesie Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+                
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_disney_minnie_mouse_birthday_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Disney Minnie Mouse Birthday Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+            </div> {{!-- END IMG ROW 3 --}}
+
+            <div class="row"> {{!-- IMG ROW 4 --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_donut_sprinkles_birthday_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Donut Sprinkles Birthday Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_nurse_graduation_flower_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Nurse Graduation Flower Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+                
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_rainbow_unicorn_fourth_birthday_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Rainbow Unicorn Fourth Birthday Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+            </div> {{!-- END IMG ROW 4 --}}
+
+            <div class="row"> {{!-- IMG ROW 5 --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_roses_unicorn_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Roses Unicorn Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/custom_will_you_be_my_bridesmaid_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Custom Will You Be My Bridesmaid Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+                
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/fortnite_birthday_floss_dance_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Fortnite Birthday Floss Dance Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+            </div> {{!-- END IMG ROW 5 --}}
+
+            <div class="row"> {{!-- IMG ROW 6 --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/love_heart_flower_gift_box_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Love Heart Flower Gift Box Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/nightmare_before_christmas_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Nightmare Before Christmas Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+                
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/nurse_doctor_heartbeat_fundraiser_thank_you_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Nurse Doctor Heartbeat Fundraiser Thank You Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+            </div> {{!-- END IMG ROW 6 --}}
+
+            <div class="row"> {{!-- IMG ROW 7 --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/police_graduation_handcuffs_congrats_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Police Graduation Handcuffs Congrats Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/roses_carnations_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Roses Carnations Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+                
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/unicorn_dinosaure_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>Unicorn Dinosaure Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+            </div> {{!-- END IMG ROW 7 --}}
+
+            <div class="row"> {{!-- IMG ROW 8 --}}
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/xray_skeleton_doctor_scrubs_cookies.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p>X-Ray Skeleton Doctor Scrubs Cookies</p>
+                        </div>
+                   </div> {{!-- END CARD --}}
+                </div> {{!-- END COL --}}
+
+                {{!-- <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p></p>
+                        </div>
+                   </div>
+                </div>
+                
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="materialboxed" src="../img/cookies/.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p></p>
+                        </div>
+                   </div>
+                </div> --}}
+
+            </div> {{!-- END IMG ROW 8 --}}
+
+        </div> {{!-- END GALLERY COL --}}
+    </div> {{!-- END GALLERY ROW --}}
+
+
+</div> {{!-- END MAIN CONTENT CONTAINER --}}
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.materialboxed').materialbox();
+
+        $('select').formSelect();
+    });
+</script>

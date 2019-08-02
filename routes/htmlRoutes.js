@@ -34,7 +34,7 @@ module.exports = function(app) {
   });
 
   app.get("/about", function(req, res) {
-    res.render("public");
+    res.render("about");
   });
 
   app.get("/order", function(req, res) {

@@ -11,11 +11,13 @@ header {
   text-align: center;
 }
 
-footer {
-  margin-top: 100px;
+#contact-sect,
+#about,
+.admin {
+  margin-top: 50px;
 }
 
-#contact-sect {
+footer {
   margin-top: 100px;
 }
 
@@ -28,10 +30,10 @@ header .container {
   max-width: 80%;
 }
 
-#contact-form {
+.sections {
   border: #57bd9c 2px solid;
   padding: 30px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .section-heading {
@@ -44,7 +46,8 @@ header,
 }
 
 .page-footer,
-header {
+header,
+#button {
   background: #57bd9c;
 }
 
@@ -79,35 +82,31 @@ header {
 
 .parallax-container {
   height: 600px;
-
-hr {
-  border-top: 1px lightgrey;
-
 }
 
-h2 {
-  color: white;
+.para {
+  margin-bottom: 40px;
 }
 
-#galleryText {
-  text-align: center;
-  font-size: 22px;
+#about-pic {
+  height: 400px;
+  width: auto;
 }
 
-p {
-  color:white;
-  font-family: sans-serif;
-  font-size: 24px;
-  line-height: 150%;
+.footer-link {
+  padding-bottom: 6px;
 }
 
-#button {
-  background-color: #57bd9c;
+.product-carousel {
+  height: 600px;
+}
+.product-carousel .thumbnails {
+  top: -90px;
 }
 
-.admin {
-  width: 90%;
-  background-color: rebeccapurple;
+.card-image {
+  height: 235px;
+  overflow: hidden;
 }
 
 /*********** Styles for screen for 767px and smaller only ***********/
@@ -218,7 +217,7 @@ p {
 /********* Extra large devices (large laptops and desktops, 1200px and up) ************/
 @media only screen and (min-width: 1200px) {
   body {
-    display: ;
+    /* display: ; */
     /* background: lightblue; */
   }
 }
