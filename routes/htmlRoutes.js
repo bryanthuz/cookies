@@ -22,9 +22,12 @@ module.exports = function(app) {
   });
 
   app.get("/gallery", function(req, res) {
-    db.Cookie.findAll({}).then(function(dbCookies) {
+    db.Cookie.findAll({
+      order: [["id", "DESC"]]
+    }).then(function(dbCookies) {
       res.render("gallery", {
         cookies: dbCookies
+
       });
     });
   });
@@ -34,7 +37,7 @@ module.exports = function(app) {
   });
 
   app.get("/about", function(req, res) {
-    res.render("public");
+    res.render("about");
   });
 
   app.get("/order", function(req, res) {

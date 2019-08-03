@@ -1,22 +1,90 @@
-
-    <div class="container">
-    <h2 class="center-align"> Cookie Gallery </h2>
-
-    <hr>
-    <br>
-    <p class="center-align"> Take a peak at some of the beautiful cookies we have created!</p>
+<div class="container" id="gallery-sect"> {{!-- MAIN CONTENT CONTAINER --}}
+    <div class="row">
+        <div class="col s12">
+            <h2 class="section-heading">Gallery</h2>
+        </div>
     </div>
+    <div class="row sections" id="gallery"> {{!-- MAIN GALLERY ROW --}}
+        <div class="col s12"> {{!-- GALLERY COL --}}
+            <div class="row"> {{!-- DROPDOWN SELECTOR --}}
+                 <div class="input-field col s12">
+                    <select multiple id="category">
+                        <option value="" disabled selected>Choose your cookies!</option>
+                        <option value="1"> Birthday</option>
+                        <option value="2"> Bridal Shower </option>
+                        <option value="3"> Baby Shower </option>
+                        <option value="4"> Graduation </option>
+                        <option value="5"> Halloween </option>
+                        <option value="3"> Thank You </option>
+                    </select>
+                    <label>Multiple Select</label>
+                </div>
+            </div> {{!-- END DROPDOWN SELECTOR --}}
 
     <br>
 
-    <div class="container">
-          {{#each cookies}}
+       <div class="container">
         <div class="row"> 
-             <div class="col s3 m3 l3" id="gallery"> 
-             <img src="../img/cookies/{{this.image}}"  alt="{{this.name}}" class="circle responsive-img">
-              <p id="galleryText"> {{this.name}}</p>
-       
+             {{#each cookies}}
+             <div class="col s12 m4 l4" id="gallery">
+                  
+                 <div class="card small">
+                     
+                     <div class="card-image">
+             <img class="materialboxed" src="../img/cookies/{{this.image}}"  alt="{{this.name}}"  id="galleryPic">
+              </div>
+             <div class="card content">
+              <p> {{this.name}}</p>
+                </div>
+            </div>
             </div>
   {{/each}}
 </div>
 </div>
+</div>
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.materialboxed').materialbox();
+        $('select').formSelect();
+
+$("#category").on("click", function() {
+
+  var userCategory = $("#category").val();
+
+  $.get("/api/category/" + userCategory, function(data) {
+
+    console.log(data);
+    showCategory(data);
+
+  });
+
+
+
+function showCategory(data) {
+  if (data.length !== 0) {
+
+    $("#container").empty();
+    $("#container").show();
+
+    for (var i = 0; i < data.length; i++) {
+
+      var div = $("<div>");
+
+      div.append("<img>" + data[i].image + "</img>");
+      div.append("<p> " +  data[i].name + "</p>");
+
+      $("#container").append(div);
+
+    }
+  }
+}
+});
+    });
+
+     
+</script>
