@@ -3,16 +3,6 @@ var path = require("path");
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page
-  // app.get("/", function(req, res) {
-  //   db.Example.findAll({}).then(function(dbExamples) {
-  //     res.render("index", {
-  //       msg: "Welcome!",
-  //       examples: dbExamples
-  //     });
-  //   });
-  // });
-
   app.get("/", function(req, res) {
     res.render("index");
   });
@@ -22,7 +12,9 @@ module.exports = function(app) {
   });
 
   app.get("/gallery", function(req, res) {
-    db.Cookie.findAll({}).then(function(dbCookies) {
+    db.Cookie.findAll({
+      order: [["id", "DESC"]]
+    }).then(function(dbCookies) {
       res.render("gallery", {
         cookies: dbCookies
       });

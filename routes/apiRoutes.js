@@ -4,7 +4,7 @@ var axios = require("axios");
 module.exports = function(app) {
   // Get all examples
   app.get("/api/cookies-test", function(req, res) {
-    db.Cookie.findAll({}).then(function(dbCookies) {
+    db.CookieTest.findAll({}).then(function(dbCookies) {
       res.json(dbCookies);
       console.log("hello");
     });

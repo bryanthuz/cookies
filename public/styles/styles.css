@@ -1,12 +1,10 @@
 /********** UNIVERSAL STYLES **********/
-
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   font-size: 16px;
 }
-
 header {  
   text-align: center;
 }
@@ -20,11 +18,9 @@ header {
 footer {
   margin-top: 100px;
 }
-
 header .container {
   width: 100%;
 }
-
 #contact-sect,
 .page-footer .container {
   max-width: 80%;
@@ -35,51 +31,41 @@ header .container {
   padding: 30px;
   margin-top: 20px;
 }
-
 .section-heading {
   color: #37a480;
 }
-
 header,
 .nav-link {
   color: white;
 }
-
 .page-footer,
 header,
 #button {
   background: #57bd9c;
 }
-
 .flex-nav,
 .nav-link {
   background: #54b294;
 }
-
 #header-logo {
   max-height: 125px;
   width: auto;
   margin: 20px auto;
 }
-
 .flex-nav {
   box-sizing: border-box;
   margin: 0 auto;
 }
-
 .nav-link {
   list-style: none;
   transition: background .4s;
 }
-
 .nav-link:hover {
   background: #57bd9c;
 }
-
 .footer-copyright i {
   margin-left: 10px;
 }
-
 .parallax-container {
   height: 600px;
 }
@@ -114,15 +100,12 @@ header,
   body {
     /* background: yellow; */
   }
-
   .flex-nav {
     display: none;
   }
-
   .nav-ul {
     border-top: 2px solid #37a480;
   }
-
   .nav-link {
     display: block;
     padding: 15px 30px;
@@ -133,35 +116,27 @@ header,
   #nav-link-5 {
     border-bottom: none;
   }
-
   .menu-btn {
     width: 100%;
     padding: 15px;
     border-top: 2px solid #37a480;
     transition: background .4s;
   }
-
   .menu-btn:hover {
     background: #1c936c;
   }
-
 }
-
 /*********** Small devices (portrait tablets and large phones, 600px and up) ************/
 @media only screen and (min-width: 600px) {
-
 }
-
 /*********** Medium devices (landscape tablets, 768px and up) *************/
 @media only screen and (min-width: 768px) {
   body {
     /* background: tan; */
   }
-
   .menu-btn {
     display: none;
   }
-
   .flex-nav {
     display: flex;
     width: 700 px;
@@ -169,14 +144,12 @@ header,
     /* flex-wrap: wrap; */
     /* border: 2px solid red; */
   }
-
   .nav-ul {
     display: inline-flex;
     width: 700 px;
     border-top: none;
     /* border: 2px solid yellow; */
   }
-
   .nav-link {
     display: inline-block;
     width: 125px;
@@ -188,20 +161,15 @@ header,
     border-left: 1px solid #57bd9c;
     border-right: 1px solid #57bd9c;
   }
-
   #nav-link-1 {
     border-left: 2px solid #57bd9c;
     border-right: 1px solid #57bd9c;
   }
-
   #nav-link-5 {
     border-left: 1px solid #57bd9c;
     border-right: 2px solid #57bd9c;
   }
-
 }
-
-
 /*********** Large devices (laptops/desktops, 992px and up) ************/
 @media only screen and (min-width: 992px) {
   body {
@@ -211,9 +179,7 @@ header,
     width: 80%;
     border: 2px solid pink;
   } */
-
 }
-
 /********* Extra large devices (large laptops and desktops, 1200px and up) ************/
 @media only screen and (min-width: 1200px) {
   body {

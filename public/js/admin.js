@@ -13,9 +13,6 @@ $(function() {
       description: $("#cookie-description")
         .val()
         .trim(),
-      imageFile: $("#cookie-img-file")
-        .val()
-        .trim(),
       image: $("#cookie-file-name")
         .val()
         .trim(),
@@ -37,7 +34,7 @@ $(function() {
     });
   });
 
-  $(".eatburger").on("click", function(event) {
+  $(".updateCookie").on("click", function(event) {
     event.preventDefault();
 
     var id = $(this).data("id");
@@ -46,7 +43,7 @@ $(function() {
     };
 
     // Send the PUT request.
-    $.ajax("/api/burgers/" + id, {
+    $.ajax("/api/cookies/" + id, {
       type: "PUT",
       data: devouredState
     }).then(function() {
@@ -55,7 +52,7 @@ $(function() {
     });
   });
 
-  $(".trashburger").on("click", function(event) {
+  $(".deleteCookie").on("click", function(event) {
     event.preventDefault();
 
     var id = $(this).data("id");
@@ -63,7 +60,7 @@ $(function() {
     // Send the DELETE request.
     $.ajax({
       type: "DELETE",
-      url: "/api/burgers/" + id
+      url: "/api/cookie/" + id
     }).then(location.reload());
   });
 });

@@ -8,7 +8,7 @@
 
   <div class="row sections" id="admin-form">
 
-    <form class="col s12">
+    <form class="col s12 create-form">
 
         <div class="row">
           <div class="input-field col s12">
@@ -16,21 +16,12 @@
             <label for="cookie-text">Cookie Set Name</label>
           </div>
         </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="cookie-keywords" class="materialize-textarea"></textarea>
-            <label for="cookie-keywords">Keywords</label>
-          </div>
-        </div>
-
         <div class="row">
           <div class="input-field col s12">
             <textarea id="cookie-description" class="materialize-textarea"></textarea>
             <label for="cookie-description">Description</label>
           </div>
         </div>
-
         <div class="row">
             <label>Choose File to Upload</label>
             <div class="file-field input-field">
@@ -39,38 +30,34 @@
                   <input type="file" multiple />
               </div>              
               <div class="file-path-wrapper">
-                  <input class="file-path validate" id="cookie-img" type="text" placeholder="Upload multiple files"/>
+                  <input class="file-path validate" id="cookie-file-name" type="text" placeholder="Upload a single JPEG file"/>
               </div>
             </div>    
         </div>
-
-{{!-- OLD SUBMIT BUTTON CODE- CAN BE DELETED, LEFT IN FOR REFERENCE --}}
-    {{!-- <form action="#">
-      <div class="file-field input-field">
-        <div class="btn">
-          <span>File</span>
-          <input type="file">
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" id="cookie-img" type="text">
-        </div>
-      </div>
-    </form> --}}
-
         <div class="row">
           <div class="input-field col s12">
             <textarea id="cookie-category" class="materialize-textarea"></textarea>
             <label for="textarea">Primary Category</label>
           </div>
         </div>
-
         <div class="row">
           <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
           </button>
         </div>
-
     </form>
+  </div>
+  <div class="row sections" id="admin-form">
+    <div class="col s12">
+      <ul>
+        {{#each cookie}}
+            <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+            <button type="button" class="updateCookie btn btn-warning" id ="updateButton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+            <button type="button" class="deleteCookie btn btn-warning" id ="deleteButton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+            <hr>
+        {{/each}}
+      </ul>
+    </div>
   </div>
 </div>
 

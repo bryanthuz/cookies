@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 var request;
 
-describe("GET /api/cookies", function() {
+describe("GET /api/cookies-test", function() {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function() {
@@ -17,10 +17,9 @@ describe("GET /api/cookies", function() {
     return db.sequelize.sync({ force: true });
   });
 
-
   it("should find all cookies", function(done) {
     // Add some examples to the db to test with
-    db.Cookie.bulkCreate([
+    db.CookieTest.bulkCreate([
       {
         name: "Sawyer's Baby Shower - It's a Girl Hawaiian Cookies",
         description: "default description",
