@@ -8,13 +8,6 @@ module.exports = function(sequelize, DataTypes) {
       },
       defaultValue: "Example Cookie Name"
     },
-    // keywords: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: false,
-    //   validate: {
-    //     len: [1]
-    //   }
-    // },
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -35,4 +28,3 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Cookie;
 };
-

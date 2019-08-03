@@ -1,9 +1,9 @@
 var db = require("../models");
-var axios = require("axios")
+var axios = require("axios");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/cookies", function(req, res) {
+  app.get("/api/cookies-test", function(req, res) {
     db.Cookie.findAll({}).then(function(dbCookies) {
       res.json(dbCookies);
       console.log("hello");
@@ -66,12 +66,16 @@ module.exports = function(app) {
   app.get("/api/instagram", function(req, res) {
     axios({
       method: "get",
-      url: "http://api.instagram.com/v1/users/self/media/recent/?access_token=" + process.env.INSTAGRAM_CODE
-    }).then(function(response) {
-      res.json(response.data);
-    }).catch(function(err) {
-      console.log(err)
+      url:
+        "http://api.instagram.com/v1/users/self/media/recent/?access_token=" +
+        process.env.INSTAGRAM_CODE
     })
+      .then(function(response) {
+        res.json(response.data);
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
   });
 
   // POST route for saving a new post

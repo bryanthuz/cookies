@@ -23,7 +23,6 @@ describe("GET /api/cookies", function() {
     db.Cookie.bulkCreate([
       {
         name: "Sawyer's Baby Shower - It's a Girl Hawaiian Cookies",
-        keywords: "hawaiian, palm frawns, onesie, hibiscus",
         description: "default description",
         image: "baby_shower_girl_hawaiian_onsie_cookies.jpg",
         category: "Birthday"
@@ -31,7 +30,7 @@ describe("GET /api/cookies", function() {
     ]).then(function() {
       // Request the route that returns all examples
 
-      request.get("/api/cookies").end(function(err, res) {
+      request.get("/api/cookies-test").end(function(err, res) {
         var responseStatus = res.status;
         var responseBody = res.body;
 
@@ -49,7 +48,6 @@ describe("GET /api/cookies", function() {
           .to.be.an("object")
           .that.includes({
             name: "Sawyer's Baby Shower - It's a Girl Hawaiian Cookies",
-            keywords: "hawaiian, palm frawns, onesie, hibiscus",
             description: "default description",
             image: "baby_shower_girl_hawaiian_onsie_cookies.jpg",
             category: "Birthday"
