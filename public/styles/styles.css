@@ -70,6 +70,25 @@ header,
   height: 600px;
 }
 
+hr {
+  border-top: 1px lightgrey;
+}
+
+h2 {
+  color: white;
+}
+
+#galleryText {
+  text-align: center;
+  font-size: 22px;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+}
+
 .para {
   margin-bottom: 40px;
 }

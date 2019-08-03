@@ -1,6 +1,10 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var handlebars = require("handlebars")
+var groupBy = require("handlebars-group-by");
+groupBy.register(handlebars);
+handlebars.registerHelper(groupBy(handlebars));
 
 var db = require("./models");
 

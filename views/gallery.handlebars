@@ -9,43 +9,37 @@
         <div class="col s12"> {{!-- GALLERY COL --}}
             <div class="row"> {{!-- DROPDOWN SELECTOR --}}
                  <div class="input-field col s12">
-                    <select multiple id="category">
-                        <option value="" disabled selected>Choose your cookies!</option>
-                        <option value="1"> Birthday</option>
-                        <option value="2"> Bridal Shower </option>
-                        <option value="3"> Baby Shower </option>
-                        <option value="4"> Graduation </option>
-                        <option value="5"> Halloween </option>
-                        <option value="3"> Thank You </option>
+
+                    <select id="category" class="browser-default">
+                        <option value="" disabled selected>Choose your cookie category!</option>
+                        {{#each cookies}}
+                        <option value="{{this.category}}">{{this.category}}</option>
+                        {{/each}}
                     </select>
-                    <label>Multiple Select</label>
                 </div>
             </div> {{!-- END DROPDOWN SELECTOR --}}
+        </div>
 
     <br>
 
-       <div class="container">
-        <div class="row"> 
-             {{#each cookies}}
-             <div class="col s12 m4 l4" id="gallery">
-                  
-                 <div class="card small">
-                     
-                     <div class="card-image">
-             <img class="materialboxed" src="../img/cookies/{{this.image}}"  alt="{{this.name}}"  id="galleryPic">
-              </div>
-             <div class="card content">
-              <p> {{this.name}}</p>
+        {{#each cookies}}
+        <div class="col s12 m4" id="gallery">
+            
+            <div class="card">
+                
+                <div class="card-image">
+                    <img class="materialboxed" src="../img/cookies/{{this.image}}"  alt="{{this.name}}"  id="galleryPic">
+                </div>
+                <div class="card-content">
+                    <p class="gallery-text">{{this.name}}</p>
                 </div>
             </div>
-            </div>
-  {{/each}}
-</div>
-</div>
+        </div>
+        {{/each}}
+    </div>
 </div>
 
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/index.js"></script>
-<script src="js/gallery.js"></script>
+

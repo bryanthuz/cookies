@@ -8,7 +8,13 @@ module.exports = function(app) {
   });
 
   app.get("/admin", function(req, res) {
-    res.render("admin");
+    db.Cookie.findAll({
+      order: [["id", "DESC"]]
+    }).then(function(dbCookies) {
+      res.render("admin", {
+        cookies: dbCookies
+      });
+    });
   });
 
   app.get("/gallery", function(req, res) {

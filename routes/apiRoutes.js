@@ -6,14 +6,18 @@ module.exports = function(app) {
   app.get("/api/cookies-test", function(req, res) {
     db.CookieTest.findAll({}).then(function(dbCookies) {
       res.json(dbCookies);
-      console.log("hello");
     });
   });
 
   app.get("/api/cookies", function(req, res) {
     db.Cookie.findAll({}).then(function(dbCookies) {
       res.json(dbCookies);
-      console.log("hello");
+    });
+  });
+
+  app.get("/api/category", function(req, res) {
+    db.Category.findAll({}).then(function(dbCategory) {
+      res.json(dbCategory);
     });
   });
 
@@ -67,7 +71,7 @@ module.exports = function(app) {
     axios({
       method: "get",
       url:
-        "http://api.instagram.com/v1/users/self/media/recent/?access_token=" +
+        "https://api.instagram.com/v1/users/self/media/recent/?access_token=" +
         process.env.INSTAGRAM_CODE
     })
       .then(function(response) {
@@ -82,7 +86,6 @@ module.exports = function(app) {
   app.post("/api/cookies/cms", function(req, res) {
     db.Cookie.create({
       name: req.body.name,
-      keywords: req.body.keywords,
       description: req.body.description,
       image: req.body.image,
       category: req.body.category

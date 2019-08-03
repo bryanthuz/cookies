@@ -3,9 +3,10 @@ $(document).ready(function(){
   $("select").formSelect();
 
   $("#category").on("click", function() {
-    var userCategory = $("#category").val();
+    var userCategory = $(this).val();
+    console.log(userCategory)
 
-    $.get("/api/category/" + userCategory, function(data) {
+    $.get("/api/cookies/category/" + userCategory, function(data) {
       console.log(data);
       showCategory(data);
     });
@@ -19,7 +20,7 @@ $(document).ready(function(){
           var div = $("<div>");
 
           div.append("<img>" + data[i].image + "</img>");
-          div.append("<p> " +  data[i].name + "</p>");
+          div.append("<p> " + data[i].name + "</p>");
 
           $("#container").append(div);
         }

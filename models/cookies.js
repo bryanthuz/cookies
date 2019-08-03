@@ -10,16 +10,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false,
-      defaultValue: "Default description"
+      allowNull: true
     },
     image: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         len: [1]
-      },
-      defaultValue: "example_cookies_image.jpg"
+      }
     },
     category: {
       type: DataTypes.STRING,

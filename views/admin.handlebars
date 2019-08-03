@@ -27,7 +27,7 @@
             <div class="file-field input-field">
               <div class="btn">
                   <span>Browse</span>
-                  <input type="file" multiple />
+                  <input type="file" id="cookie-file">
               </div>              
               <div class="file-path-wrapper">
                   <input class="file-path validate" id="cookie-file-name" type="text" placeholder="Upload a single JPEG file"/>
@@ -41,23 +41,28 @@
           </div>
         </div>
         <div class="row">
-          <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
+          <button class="btn waves-effect waves-light right" type="submit" id="new-cookie" name="action">Submit
             <i class="material-icons right">send</i>
           </button>
         </div>
     </form>
   </div>
-  <div class="row sections" id="admin-form">
+
+  <div class="row">
+    {{#each cookies}}
     <div class="col s12">
-      <ul>
-        {{#each cookie}}
-            <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-            <button type="button" class="updateCookie btn btn-warning" id ="updateButton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
-            <button type="button" class="deleteCookie btn btn-warning" id ="deleteButton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
-            <hr>
-        {{/each}}
-      </ul>
+        <span><strong>{{this.id}} - {{this.name}} ({{this.category}})</strong></span>
+        <span style="float: right;">
+        <button type="button" style="margin: -10px 20px 20px 0px" class="updateCookie btn btn-warning" id ="updateButton" data-id="{{this.id}}"><span class="fa fa-pencil"></span></button>
+        <button type="button" style="margin: -10px 20px 20px 0px" class="deleteCookie btn btn-warning" id ="deleteButton" data-id="{{this.id}}"><span class="fa fa-trash"></span></button>
+        </span>
+        <br/>
+        <hr>
     </div>
+    {{/each}}
+
   </div>
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
