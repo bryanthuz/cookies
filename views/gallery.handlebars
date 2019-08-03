@@ -12,16 +12,16 @@
 
                     <select id="category" class="browser-default">
                         <option value="" disabled selected>Choose your cookie category!</option>
-                        {{#each cookies}}
-                        <option value="{{this.category}}">{{this.category}}</option>
+                        {{#each categories}}
+                        <option value="{{this}}">{{this}}</option>
                         {{/each}}
                     </select>
                 </div>
             </div> {{!-- END DROPDOWN SELECTOR --}}
         </div>
-
+    </div>
     <br>
-
+    <div class="row">
         {{#each cookies}}
         <div class="col s12 m4" id="gallery">
             

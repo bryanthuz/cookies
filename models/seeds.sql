@@ -14,13 +14,11 @@ VALUES ("Dream Weaver Baby Shower Cookies", "default description", "custom_birth
 INSERT INTO cookies (name, description, image, category) 
 VALUES ("Sunflower Bridal Shower Cookies", "default description", "custom_bridal_shower_sunflower_cookies.jpg", "Bridal Shower");
 INSERT INTO cookies (name, description, image, category) 
-VALUES ("Cactus Cookies", "default description", "custom_cactus_onsie_cookies.jpg", "Baby Shower");
-INSERT INTO cookies (name, description, image, category) 
 VALUES ("Minnie Mouse Cookies", "default description", "custom_disney_minnie_mouse_birthday_cookies.jpg", "Birthday");
 INSERT INTO cookies (name, description, image, category) 
 VALUES ("Nursing Graduation Cookies", "default description", "custom_nurse_graduation_flower_cookies.jpg", "Graduation");
 INSERT INTO cookies (name, description, image, category) 
-VALUES ("Unicorn Rainbow Cookies", "default description", "custom_rainbow_unicron_fourth_birthday_cookies.jpg", "Birthday");
+VALUES ("Unicorn Rainbow Cookies", "default description", "custom_rainbow_unicorn_fourth_birthday_cookies.jpg", "Birthday");
 INSERT INTO cookies (name, description, image, category) 
 VALUES ("Unicorn Rose Cookies", "default description", "custom_roses_unicorn_cookies.jpg", "Birthday");
 INSERT INTO cookies (name, description, image, category) 
