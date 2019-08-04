@@ -1,19 +1,23 @@
 var db = require("../models");
-var axios = require("axios")
+var axios = require("axios");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/cookies", function(req, res) {
-    db.Cookie.findAll({}).then(function(dbCookies) {
+  app.get("/api/cookies-test", function(req, res) {
+    db.CookieTest.findAll({}).then(function(dbCookies) {
       res.json(dbCookies);
-      console.log("hello");
     });
   });
 
   app.get("/api/cookies", function(req, res) {
     db.Cookie.findAll({}).then(function(dbCookies) {
       res.json(dbCookies);
-      console.log("hello");
+    });
+  });
+
+  app.get("/api/category", function(req, res) {
+    db.Category.findAll({}).then(function(dbCategory) {
+      res.json(dbCategory);
     });
   });
 
@@ -66,19 +70,22 @@ module.exports = function(app) {
   app.get("/api/instagram", function(req, res) {
     axios({
       method: "get",
-      url: "http://api.instagram.com/v1/users/self/media/recent/?access_token=" + process.env.INSTAGRAM_CODE
-    }).then(function(response) {
-      res.json(response.data);
-    }).catch(function(err) {
-      console.log(err)
+      url:
+        "https://api.instagram.com/v1/users/self/media/recent/?access_token=" +
+        process.env.INSTAGRAM_CODE
     })
+      .then(function(response) {
+        res.json(response.data);
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
   });
 
   // POST route for saving a new post
   app.post("/api/cookies/cms", function(req, res) {
     db.Cookie.create({
       name: req.body.name,
-      keywords: req.body.keywords,
       description: req.body.description,
       image: req.body.image,
       category: req.body.category

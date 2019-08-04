@@ -3,28 +3,36 @@ var path = require("path");
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page
-  // app.get("/", function(req, res) {
-  //   db.Example.findAll({}).then(function(dbExamples) {
-  //     res.render("index", {
-  //       msg: "Welcome!",
-  //       examples: dbExamples
-  //     });
-  //   });
-  // });
-
   app.get("/", function(req, res) {
     res.render("index");
   });
 
   app.get("/admin", function(req, res) {
-    res.render("admin");
+    db.Cookie.findAll({
+      order: [["id", "DESC"]]
+    }).then(function(dbCookies) {
+      res.render("admin", {
+        cookies: dbCookies
+      });
+    });
   });
 
   app.get("/gallery", function(req, res) {
-    db.Cookie.findAll({}).then(function(dbCookies) {
+    db.Cookie.findAll({
+      order: [["id", "DESC"]]
+    }).then(function(dbCookies) {
       res.render("gallery", {
         cookies: dbCookies
+      });
+    });
+  });
+
+  app.get("/category", function(req, res) {
+    db.Cookie.findAll({
+      groupe: ["category"]
+    }).then(function(dbCookies) {
+      res.render("gallery", {
+        categories: dbCookies
       });
     });
   });
@@ -34,7 +42,7 @@ module.exports = function(app) {
   });
 
   app.get("/about", function(req, res) {
-    res.render("public");
+    res.render("about");
   });
 
   app.get("/order", function(req, res) {
