@@ -27,8 +27,8 @@ module.exports = function(app) {
       where: {
         category: req.params.category
       }
-    }).then(function(dbCookies) {
-      res.json(dbCookies);
+    }).then(function(cookieCats) {
+      res.json(cookieCats);
     });
   });
 

@@ -27,15 +27,15 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/category", function(req, res) {
-    db.Cookie.findAll({
-      groupe: ["category"]
-    }).then(function(dbCookies) {
-      res.render("gallery", {
-        categories: dbCookies
-      });
-    });
-  });
+  // app.get("/category", function(req, res) {
+  //   db.Cookie.findAll({
+  //     group: "category"
+  //   }).then(function(cookieCats) {
+  //     res.render("gallery", {
+  //       cookieCats: cookieCats
+  //     });
+  //   });
+  // });
 
   app.get("/contact", function(req, res) {
     res.render("contact");

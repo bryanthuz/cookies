@@ -5,37 +5,39 @@
             <h2 class="section-heading">Gallery</h2>
         </div>
     </div>
-    <div class="row sections" id="gallery"> {{!-- MAIN GALLERY ROW --}}
-        <div class="col s12"> {{!-- GALLERY COL --}}
-            <div class="row"> {{!-- DROPDOWN SELECTOR --}}
-                 <div class="input-field col s12">
+    <div class="secions" id="gallery">
+        <div class="row"> {{!-- MAIN GALLERY ROW --}}
+            <div class="col s12"> {{!-- GALLERY COL --}}
+                <div class="row"> {{!-- DROPDOWN SELECTOR --}}
+                    <div class="input-field col s12">
 
-                    <select id="category" class="browser-default">
-                        <option value="" disabled selected>Choose your cookie category!</option>
-                        {{#each categories}}
-                        <option value="{{this}}">{{this}}</option>
-                        {{/each}}
-                    </select>
-                </div>
-            </div> {{!-- END DROPDOWN SELECTOR --}}
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        {{#each cookies}}
-        <div class="col s12 m4" id="gallery">
-            
-            <div class="card">
-                
-                <div class="card-image">
-                    <img class="materialboxed" src="../img/cookies/{{this.image}}"  alt="{{this.name}}"  id="galleryPic">
-                </div>
-                <div class="card-content">
-                    <p class="gallery-text">{{this.name}}</p>
-                </div>
+                        <select id="category" class="browser-default">
+                            <option value="" disabled selected>Choose your cookie category!</option>
+                            {{#each cookieCats}}
+                            <option value="{{this.category}}">{{this.category}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div> {{!-- END DROPDOWN SELECTOR --}}
             </div>
         </div>
-        {{/each}}
+        <br>
+        <div class="row">
+            {{#each cookies}}
+            <div class="col s12 m4" id="gallery">
+                
+                <div class="card">
+                    
+                    <div class="card-image">
+                        <img class="materialboxed" src="../img/cookies/{{this.image}}"  alt="{{this.name}}"  id="galleryPic">
+                    </div>
+                    <div class="card-content">
+                        <p class="gallery-text">{{this.name}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
     </div>
 </div>
 

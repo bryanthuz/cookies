@@ -24,5 +24,6 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "Custom Cookies"
     }
   });
+
   return Cookie;
 };
