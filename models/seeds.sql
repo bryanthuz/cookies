@@ -1,18 +1,18 @@
 USE cookies_db;
 INSERT INTO cookies (name, description, image, category) 
-VALUES ("Sawyer's Baby Shower - It's a Girl Hawaiian Cookies", "default description", "baby_shower_girl_hawaiian_onsie_cookies.jpg", "Birthday");
+VALUES ("Sawyer's Baby Shower - It's a Girl Hawaiian Cookies", "default description", "baby_shower_girl_hawaiian_onsie_cookies.jpg", "Baby Shower");
 INSERT INTO cookies (name, description, image, category) 
 VALUES ("Paxton's 2nd Birthday - Two the Moon Cookies", "default description", "custom_birthday_boy_moon_cookies.jpg", "Birthday");
 INSERT INTO cookies (name, description, image, category) 
 VALUES ("Jammin'for Jess - Airplane Iowa Cookies", "default description", "custom_airplane_cookies.jpg", "Birthday");
 INSERT INTO cookies (name, description, image, category) 
-VALUES ("Onsie Baby Cookies", "default description", "custom_baby_shower_bib_onsie_otter_cookies.jpg", "Birthday");
+VALUES ("Onsie Baby Cookies", "default description", "custom_baby_shower_bib_onsie_otter_cookies.jpg", "Baby Shower");
 INSERT INTO cookies (name, description, image, category) 
-VALUES ("Baby Shower Flower Cookies", "default description", "custom_baby_shower_bottle_bib_onesie_hearts_flowers_cookies.jpg", "Birthday");
+VALUES ("Baby Shower Flower Cookies", "default description", "custom_baby_shower_bottle_bib_onesie_hearts_flowers_cookies.jpg", "Baby Shower");
 INSERT INTO cookies (name, description, image, category) 
-VALUES ("Dream Weaver Baby Shower Cookies", "default description", "custom_birthday_boy_moon_cookies.jpg", "Birthday");
+VALUES ("Dream Weaver Baby Shower Cookies", "default description", "custom_birthday_boy_moon_cookies.jpg", "Baby Shower");
 INSERT INTO cookies (name, description, image, category) 
-VALUES ("Sunflower Bridal Shower Cookies", "default description", "custom_bridal_shower_sunflower_cookies.jpg", "Bridal Shower");
+VALUES ("Sunflower Bridal Shower Cookies", "default description", "custom_bridal_shower_sunflower_cookies.jpg", "Bridal");
 INSERT INTO cookies (name, description, image, category) 
 VALUES ("Minnie Mouse Cookies", "default description", "custom_disney_minnie_mouse_birthday_cookies.jpg", "Birthday");
 INSERT INTO cookies (name, description, image, category) 
@@ -22,7 +22,7 @@ VALUES ("Unicorn Rainbow Cookies", "default description", "custom_rainbow_unicor
 INSERT INTO cookies (name, description, image, category) 
 VALUES ("Unicorn Rose Cookies", "default description", "custom_roses_unicorn_cookies.jpg", "Birthday");
 INSERT INTO cookies (name, description, image, category) 
-VALUES ("Custom Bridesmaid Cookies", "default description", "custom_will_you_be_my_bridesmaid_cookies.jpg", "Bridal Shower");
+VALUES ("Custom Bridesmaid Cookies", "default description", "custom_will_you_be_my_bridesmaid_cookies.jpg", "Bridal");
 INSERT INTO cookies (name, description, image, category) 
 VALUES ("Fortnite Birthday Cookies", "default description", "fortnite_birthday_floss_dance_cookies.jpg", "Birthday");
 INSERT INTO cookies (name, description, image, category) 
@@ -39,3 +39,10 @@ INSERT INTO cookies (name, description, image, category)
 VALUES ("Unicorn and Dino Cookies", "default description", "unicorn_dinosaure_cookies.jpg", "Birthday");
 INSERT INTO cookies (name, description, image, category) 
 VALUES ("Scrubs and Xray Cookies", "default description", "xray_skeleton_doctor_scrubs_cookies.jpg", "Graduation");
+
+INSERT INTO cats (name) VALUES ("Birthday");
+INSERT INTO cats (name) VALUES ("Bridal");
+INSERT INTO cats (name) VALUES ("Baby Shower");
+INSERT INTO cats (name) VALUES ("Graduation");
+INSERT INTO cats (name) VALUES ("Halloween");
+INSERT INTO cats (name) VALUES ("Thank You");
