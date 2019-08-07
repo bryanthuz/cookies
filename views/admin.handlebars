@@ -7,6 +7,22 @@
   </div>
 
   <div class="row sections" id="admin-form">
+    <form class="col s12 category-form">
+      <div class="row">
+          <div class="input-field col s12">
+            <textarea id="cookie-category" class="materialize-textarea"></textarea>
+            <label for="textarea">Primary Category</label>
+          </div>
+      </div>
+      <div class="row">
+        <button class="btn waves-effect waves-light right" type="submit" id="new-category" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="row sections" id="admin-form">
 
     <form class="col s12 create-form">
 
@@ -30,15 +46,17 @@
                   <input type="file" id="cookie-file">
               </div>              
               <div class="file-path-wrapper">
-                  <input class="file-path validate" id="cookie-file-name" type="text" placeholder="Upload a single JPEG file"/>
+                  <input class="file-path validate" id="cookie-fl-name" type="text" placeholder="Upload a single JPEG file"/>
               </div>
             </div>    
         </div>
         <div class="row">
-          <div class="input-field col s12">
-            <textarea id="cookie-category" class="materialize-textarea"></textarea>
-            <label for="textarea">Primary Category</label>
-          </div>
+          <select id="cookie-categories">
+            <option value="">Category</option>
+            {{#each cats}}
+            <option value="{{this.name}}">{{this.name}}</option>
+            {{/each}}
+          </select>
         </div>
         <div class="row">
           <button class="btn waves-effect waves-light right" type="submit" id="new-cookie" name="action">Submit
@@ -53,7 +71,7 @@
     <div class="col s12">
         <span><strong>{{this.id}} - {{this.name}} ({{this.category}})</strong></span>
         <span style="float: right;">
-        <button type="button" style="margin: -10px 20px 20px 0px" class="updateCookie btn btn-warning" id ="updateButton" data-id="{{this.id}}"><span class="fa fa-pencil"></span></button>
+        <a href="/admin?cookie_id={{this.id}}" style="margin: -10px 20px 20px 0px" id ="updateButton" data-id="{{this.id}}"><span class="fa fa-pencil"></span></a>
         <button type="button" style="margin: -10px 20px 20px 0px" class="deleteCookie btn btn-warning" id ="deleteButton" data-id="{{this.id}}"><span class="fa fa-trash"></span></button>
         </span>
         <br/>

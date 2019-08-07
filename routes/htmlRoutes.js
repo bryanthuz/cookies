@@ -11,8 +11,11 @@ module.exports = function(app) {
     db.Cookie.findAll({
       order: [["id", "DESC"]]
     }).then(function(dbCookies) {
-      res.render("admin", {
-        cookies: dbCookies
+      db.Cat.findAll({}).then(function(dbCats) {
+        res.render("admin", {
+          cookies: dbCookies,
+          cats: dbCats
+        });
       });
     });
   });
@@ -21,18 +24,11 @@ module.exports = function(app) {
     db.Cookie.findAll({
       order: [["id", "DESC"]]
     }).then(function(dbCookies) {
-      res.render("gallery", {
-        cookies: dbCookies
-      });
-    });
-  });
-
-  app.get("/category", function(req, res) {
-    db.Cookie.findAll({
-      groupe: ["category"]
-    }).then(function(dbCookies) {
-      res.render("gallery", {
-        categories: dbCookies
+      db.Cat.findAll({}).then(function(dbCats) {
+        res.render("gallery", {
+          cookies: dbCookies,
+          cats: dbCats
+        });
       });
     });
   });

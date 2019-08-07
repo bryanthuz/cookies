@@ -15,9 +15,9 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/category", function(req, res) {
-    db.Category.findAll({}).then(function(dbCategory) {
-      res.json(dbCategory);
+  app.get("/api/cookies/category", function(req, res) {
+    db.Cat.findAll({}).then(function(dbCats) {
+      res.json(dbCats);
     });
   });
 
@@ -27,8 +27,8 @@ module.exports = function(app) {
       where: {
         category: req.params.category
       }
-    }).then(function(dbCookies) {
-      res.json(dbCookies);
+    }).then(function(cookieCats) {
+      res.json(cookieCats);
     });
   });
 
@@ -82,13 +82,22 @@ module.exports = function(app) {
       });
   });
 
-  // POST route for saving a new post
+  // POST route for saving a new cookie
   app.post("/api/cookies/cms", function(req, res) {
     db.Cookie.create({
       name: req.body.name,
       description: req.body.description,
       image: req.body.image,
       category: req.body.category
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // POST route for saving a new category
+  app.post("/api/cookies/cats", function(req, res) {
+    db.Cat.create({
+      name: req.body.name
     }).then(function(results) {
       res.json(results);
     });
