@@ -7,10 +7,9 @@ var basename = path.basename(module.filename);
 var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
-var connection;
 
-if (process.env.JAWSDB_URL) {
-  var sequelize = new Sequelize(process.enn[JAWSDB_URL]);
+if (process.use_env_variable) {
+  var sequelize = new Sequelize(process.enn[use_env_variable]);
 } else {
   var sequelize = new Sequelize(
     config.database,
@@ -19,17 +18,6 @@ if (process.env.JAWSDB_URL) {
     config
   );
 }
-
-// if (process.env.JAWSDB_URL) {
-//   connection = mysql.createConnection(process.env[process.env.JAWSDB_URL]);
-// } else {
-//   connection = mysql.createConnection(
-//     config.database,
-//     config.username,
-//     config.password,
-//     config
-//   );
-// }
 
 fs.readdirSync(__dirname)
   .filter(function(file) {
